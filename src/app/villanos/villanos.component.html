@@ -1,0 +1,32 @@
+<h2 class="title">TOP 5 MEJORES INTEGRANTES DE AKATSUKI</h2>
+
+<ul class="villanos">
+  <li *ngFor="let villano of villanos"
+    [class.selected]="villano === selectedVillano" (click)="onSelect(villano)">
+      <span class="badge">{{villano.id}}</span>{{villano.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedVillano">
+  <h2>DETALLES DE {{selectedVillano.name | uppercase}}</h2>
+<div><span>id: </span> <span class="badge badge-primary">{{selectedVillano.id}}</span></div>
+
+  <div>
+    <label for="villano-name"> Nombre: </label>
+    <input id="villano-name" [(ngModel)]="selectedVillano.name" placeholder="name">
+  </div>
+
+  <div>
+    <label for="villano-poder"> Habilidad(es): </label>
+    <input id="villano-poder" [(ngModel)]="selectedVillano.poder" placeholder="poder">
+  </div>
+
+  <div>
+    <label for="villano-nivel"> Nivel de Poder: </label>
+    <input id="villano-nivel" type="number"[(ngModel)]="selectedVillano.nivel" placeholder="nivel">
+    <button (click)="masPoder(selectedVillano)"> + </button>
+    <span> Nivel </span>
+    <button (click)="menosPoder(selectedVillano)"> - </button>
+  </div>
+</div>
+
