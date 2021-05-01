@@ -5,9 +5,8 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
-import { VillanosComponent } from './villanos/villanos.component';
 import { VillanosDetailComponent } from './villanos-detail/villanos-detail.component';
+import { VillanosComponent } from './villanos/villanos.component';
 
 @NgModule({
   declarations: [
